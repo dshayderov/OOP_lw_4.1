@@ -18,8 +18,7 @@ class Exp:
     def second(self):
         return self.__second
 
-    # Прочитать значение дроби с клавиатуры. Дробь вводится
-    # как a/b.
+    # Прочитать значение
     def read(self, prompt=None):
         line = input() if prompt is None else input(prompt)
         parts = list(map(float, line.split(' ^ ', maxsplit=1)))
@@ -27,13 +26,13 @@ class Exp:
         self.__first = float(parts[0])
         self.__second = int(parts[1])
 
-    # Вывести дробь на экран
+    # Вывести на экран
     def display(self):
         print(f"{self.__first} ^ {self.__second}")
 
     # Возведение в степень
     def power(self):
-        return pow(self.__first, self.__second)
+        return self.__first ** self.__second
 
 
 def make_exp(first, second):
